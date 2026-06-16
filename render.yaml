@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: discord-afk-bot
+    env: node
+    buildCommand: npm install && pip install gtts --break-system-packages
+    startCommand: node index.js
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GUILD_ID
+        sync: false
+      - key: VOICE_CHANNEL_ID
+        sync: false
